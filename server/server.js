@@ -37,7 +37,8 @@ server.get("/api/users", mw.protected, async (req, res) => {
     const data = await db.getUsers();
     res.status(201).json(data);
   } catch (err) {
-    res.status(500).json({ err, message: "Internal Server Error!" });
+    console.log(err);
+    res.status(500).json({ err, message: "Internal Server Error!1111" });
   }
 });
 

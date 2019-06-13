@@ -36,8 +36,8 @@ async function authZ(req, res, next) {
 }
 
 function protected(req, res, next) {
-  const token = jwt.verifyToken(req.body.token);
-  console.log(token);
+  console.log(req);
+  const token = jwt.verifyToken(req.headers.token);
   if (token) {
     next();
   } else {
